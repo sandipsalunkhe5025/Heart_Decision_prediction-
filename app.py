@@ -39,7 +39,6 @@ def placement():
         # TA= int(request.form.get('TA'))
 #        Age,Sex,RestingBP,Cholesterol,FastingBS,RestingECG,MaxHR,ExerciseAngina,Oldpeak,ST_Slope,HeartDisease
 # 0,40,0,140,289,0,5,172,0,0.0,2,0
-        # print("Age,Sex,RestingBP,Cholesterol,FastingBS,RestingECG,MaxHR,ExerciseAngina,Oldpeak,ST_Slope")
         result = model.predict(np.array([[Age,Sex,ChestPainType,RestingBP,Cholesterol,FastingBS,RestingECG,MaxHR,ExerciseAngina,Oldpeak,ST_Slope]]))
         print(f"{result=}")
         if result[0] == 1:
