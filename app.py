@@ -2,26 +2,19 @@ from flask import Flask,render_template,request
 import pickle
 import numpy as np
 # import register_login
-
-model = pickle.load(open('model.pkl','rb'))
-
+model = pickle.load(open('model12.pkl','rb')) 
 app = Flask(__name__)
-
-
+ 
 @app.route('/')
 def index():
     return render_template('index.html')
 
 
 @app.route('/predict',methods =['POST'])
-def placement():
-    
-        
+def placement(): 
         Age = int(request.form.get('Age'))
-        Sex= int(request.form.get('Sex'))
-        
-        ChestPainType = int(request.form.get('ChestPainType'))
-        
+        Sex= int(request.form.get('Sex')) 
+        ChestPainType = int(request.form.get('ChestPainType')) 
         RestingBP=int(request.form.get('RestingBP'))
         Cholesterol =int(request.form.get('Cholesterol'))
         FastingBS= int(request.form.get('FastingBS'))
